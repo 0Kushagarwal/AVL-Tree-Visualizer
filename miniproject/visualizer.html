@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVL Tree Visualiser</title>
+    <link rel="stylesheet" href="visualizer.css">
+
+</head>
+
+<body>
+    <div class="tree">
+        <h1>AVL Tree Visualizer</h1>
+        <div class="box">
+            <div class="input">
+                <input type="numberic" id="nodeValue" placeholder="Enter node value">
+                <button id="insert" onclick="insertNode()"> Insert Node</button>
+                <button id="delete" onclick="deleteNode()"> Delete Node</button>
+            </div>
+        </div>
+        <div id="tree"></div>
+    </div>
+
+    <script src="visualizer.js"></script>
+</body>
+
+</html>
