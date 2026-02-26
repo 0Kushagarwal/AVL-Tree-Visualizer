@@ -126,8 +126,3 @@ Place the following images inside an `images/` folder:
 | CSS3 | Styling, animations, responsive layout |
 | Vanilla JavaScript | AVL Tree logic and DOM-based rendering |
 
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
