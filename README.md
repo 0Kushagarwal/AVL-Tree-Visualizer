@@ -1,62 +1,133 @@
-**AVL Tree Visualizer**
+# 🌳 AVL Tree Visualizer
 
-This project provides a web-based visualizer for an AVL Tree, a self-balancing binary search tree. It helps you understand how AVL trees work by allowing you to insert and delete nodes and see the tree rebalance in real-time.
+An interactive web-based educational tool for learning and visualizing **AVL Trees** — a self-balancing Binary Search Tree. Built with pure HTML, CSS, and JavaScript.
 
-_**About the Project**_
+---
 
-An AVL tree, named after its inventors Adelson-Velsky and Landis, is a special kind of binary search tree (BST). It automatically balances itself to ensure that the height difference between the left and right subtrees of any node is never greater than 1. This strict balancing guarantees a time complexity of O(logn) for search, insertion, and deletion operations, making it highly efficient.
+## 📌 Overview
 
-The visualizer demonstrates the core mechanics of an AVL tree, including the four main types of rotations that keep the tree balanced.
+This project provides a multi-page educational experience covering the theory, rotations, and live visualization of AVL Trees. Users can insert and delete nodes in real time and watch the tree balance itself automatically.
 
-_**Key Features**_
-Interactive Visualization: Add and remove nodes and watch the AVL tree adjust dynamically.
+---
 
-Self-Balancing: See firsthand how rotations are performed to maintain the tree's balanced state.
+## 🗂️ Project Structure
 
-Informative: Learn about the characteristics, advantages, and disadvantages of AVL trees.
+```
+├── main.html               # Home/landing page with navigation
+├── main.css                # Styles for the home page
+│
+├── introduction.html       # Introduction to AVL Trees
+├── introduction.css        # Styles for the introduction page
+│
+├── rotations.html          # Explanation of all 4 rotation types
+├── rotations.css           # Styles for the rotations page
+│
+├── visualizer.html         # Interactive AVL Tree visualizer
+├── visualizer.css          # Styles for the visualizer page
+├── visualizer.js           # AVL Tree logic + DOM rendering
+│
+└── images/
+    ├── left.jpg            # Left Left Rotation diagram
+    ├── right.jpg           # Right Right Rotation diagram
+    ├── leftright.jpg       # Left Right Rotation diagram
+    └── rightleft.jpg       # Right Left Rotation diagram
+```
 
-Clear Code: The visualizer.js file provides a clear implementation of the AVL tree data structure in JavaScript, including methods for insertion, deletion, and rotation.
+---
 
-_**Rotations**_
+## 📄 Pages
 
-To maintain balance, an AVL tree performs one or more of the following rotations:
+### 🏠 Home (`main.html`)
+The landing page with navigation buttons to the three sections:
+- Introduction
+- Rotations
+- AVL Tree Visualizer
 
-Left-Left Rotation: Occurs when a node is inserted into the left subtree of a left subtree.
+### 📖 Introduction (`introduction.html`)
+Covers the theoretical background of AVL Trees:
+- **Definition** — What is an AVL Tree (Adelson-Velsky and Landis Tree)
+- **Key Points** — Balance factor rules
+- **Characteristics** — Self-balancing, BST properties
+- **Advantages** — O(log n) operations, sorted traversal
+- **Disadvantages** — Complex implementation, rotation overhead
 
-Right-Right Rotation: Occurs when a node is inserted into the right subtree of a right subtree.
+### 🔄 Rotations (`rotations.html`)
+Explains all four AVL rotation cases with diagrams:
 
-Left-Right Rotation: A combination of a left rotation followed by a right rotation.
+| Rotation | Also Known As | Description |
+|----------|--------------|-------------|
+| Left Left | Left Skew Tree | Single right rotation |
+| Right Right | Right Skew Tree | Single left rotation |
+| Left Right | — | Left rotation then right rotation |
+| Right Left | — | Right rotation then left rotation |
 
-Right-Left Rotation: A combination of a right rotation followed by a left rotation.
+### 🖥️ Visualizer (`visualizer.html` + `visualizer.js`)
+An interactive canvas where users can:
+- **Insert** nodes into the AVL Tree
+- **Delete** nodes from the AVL Tree
+- Watch the tree **auto-balance** and re-render after every operation
 
-The rotations.html file provides a visual breakdown of each rotation type.
+---
 
-_**Technologies Used**_
+## ⚙️ How It Works
 
-HTML: Provides the structure of the web pages.
+The AVL Tree logic is implemented from scratch in `visualizer.js`:
 
-CSS: Styles the tree nodes, lines, and user interface elements, including a cool glowborder animation.
+- `AVLNode` class — Stores key, left/right children, and height
+- `AVLTree` class — Handles insertion, deletion, rotations, and balance factor calculations
+- DOM rendering — Nodes are drawn as `div` elements with absolute positioning; edges are drawn as rotated `div` lines
 
-JavaScript: Powers the AVL tree logic and the dynamic visualization.
+---
 
-_**File Structure**_
+## 🚀 Usage
 
-main.html: The main landing page with links to other sections.
+No installation or build step required. Just open the project in a browser:
 
-introduction.html: Contains a general introduction to AVL trees.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/avl-tree-visualizer.git
 
-rotations.html: Explains the different types of AVL tree rotations.
+# Open the home page
+open main.html
+```
 
-visualizer.html: The interactive AVL tree visualizer.
+Or simply double-click `main.html` to launch it in your default browser.
 
-visualizer.js: The core JavaScript logic for the AVL tree data structure and the visualizer.
+> ⚠️ Make sure all files are kept in the same directory and the `images/` folder contains all four rotation diagrams.
 
-visualizer.css: Styles for the visualizer page.
+---
 
-main.css: General styles for the main pages.
+## 🎨 Design
 
-introduction.css: Styles specific to the introduction page.
+- **Theme:** Dark background (`#000`) with glowing blue (`#1a5582`) borders and accents
+- **Responsive:** Dimensions are `vw`-based for fluid scaling
+- **Animations:** CSS `glowborder` keyframe animation on hover and focus states
 
-rotations.css: Styles specific to the rotations page.
+---
 
-images/: Directory for rotation images.
+## 🖼️ Images Required
+
+Place the following images inside an `images/` folder:
+
+| File | Content |
+|------|---------|
+| `left.jpg` | Left Left Rotation diagram |
+| `right.jpg` | Right Right Rotation diagram |
+| `leftright.jpg` | Left Right Rotation diagram |
+| `rightleft.jpg` | Right Left Rotation diagram |
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Page structure and content |
+| CSS3 | Styling, animations, responsive layout |
+| Vanilla JavaScript | AVL Tree logic and DOM-based rendering |
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
