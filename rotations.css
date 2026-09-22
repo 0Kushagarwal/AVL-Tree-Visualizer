@@ -58,6 +58,7 @@ p {
     font-size: 1.35vw;
     line-height: 1.75vw;
     padding-left: 10vw;
+    float:left;
 }
 
 img {
